@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Api from "./api/Api";
+import Display from "./components/Display";
 
 function App() {
 
@@ -17,7 +18,7 @@ const handleRecipesToApp = (data) => {
   return <div className="App">
 
 <Api recipesToApp={handleRecipesToApp}/>
-
+<Display data={recettes} />
 
 
   </div>;
