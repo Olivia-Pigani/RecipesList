@@ -1,5 +1,5 @@
 const Display = (props) => {
-    const { data } = props
+    const {data} = props
     return(<div>
     
     {data.map((recette,index)=>
