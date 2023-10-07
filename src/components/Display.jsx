@@ -1,11 +1,24 @@
 const Display = (props) => {
-    const {data} = props
-    return(<div>
-    
-    {data.map((recette,index)=>
-        <p key={index}>{recette.title}</p>
-    )}
-    
-    </div>)
-}
-export default Display
+  const { data, setRecettes } = props;
+
+  console.log(data);
+ 
+
+  const deleteItemClick = (id) => {
+    const updatedRecipes = data.filter((recipe) => recipe.id !== id);
+    setRecettes(updatedRecipes);
+    console.log(id)
+  };
+
+  return (
+    <div>
+      {data.map((recette, index) => (
+        <div key={index}>
+          {recette.title}
+          <button onClick={() => deleteItemClick(recette.id)}>delete</button>
+        </div>
+      ))}
+    </div>
+  );
+};
+export default Display;

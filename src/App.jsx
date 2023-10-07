@@ -6,17 +6,23 @@ import Formular from "./components/Formular";
 
 function App() {
   const [recettes, setRecettes] = useState([]);
+  const [manageApiId, setmanageApiId] = useState(1)
 
   const handleRecipesToApp = (data) => {
+    let nextId=manageApiId
     const newRecette = data.map((recipe) => {
-      return new Recipe(
+      const newRecipe =  new Recipe(
         recipe.title,
         recipe.ingredients.split("|"),
         recipe.servings,
-        recipe.instructions
+        recipe.instructions,
+        nextId
       );
+      nextId++
+      return newRecipe
     });
-
+    
+    setmanageApiId((ancientId)=>ancientId+1)
           /* prevState est un paramètre qui rpz l'etat precedent de la variable d'etat recettes
       il y a la production d'un nouveau tableau, qui est une fusion de l'ancien tableau et la nouvelle data*/
       setRecettes(prevState => [...prevState,...newRecette])
@@ -30,11 +36,17 @@ function App() {
     setRecettes(prevState=>([...prevState,...newRecipe]))
   }
 
+  const handleDeleteItem = (id) => {
+    const updatedRecettes = recettes.filter((recette) => recette.id !== id);
+
+    setRecettes(updatedRecettes);
+  }
+
   return (
     <div className="App">
       <Api recipesToApp={handleRecipesToApp} />
-      <Display data={recettes} />
       <Formular dataFormToApp={handleDataFormToApp}/>
+      <Display data={recettes} setRecettes={setRecettes} deleteItem={handleDeleteItem} />
     </div>
   );
 }
