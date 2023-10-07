@@ -1,3 +1,4 @@
+import ModalOfDetails from "./ModalOfDetails";
 import svg from "../assets/img/card-checklist.svg"
 
 const Display = (props) => {
@@ -26,6 +27,7 @@ const Display = (props) => {
  
 
   return (
+    <>
     <div>
       {data.map((recette, index) => (
         <div key={index}>
@@ -36,6 +38,10 @@ const Display = (props) => {
         </div>
       ))}
     </div>
+    <>
+    <ModalOfDetails showModal={handleShowModal}/>
+    </>
+    </>
   );
 };
 export default Display;
