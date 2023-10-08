@@ -1,16 +1,19 @@
 import { useState } from "react"
 
-export default function ModalOfDetails (props) {
-    const {showModal} = props
+export default function ModalOfDetails ({ showModal, onClose, recetteDetails }) {
 
 
 
     return(
-    
-    
-    <><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque pariatur odit est expedita aperiam incidunt provident nemo magni illum, et a laudantium laboriosam enim nesciunt.</p></>
-    
-    <button></button>
+        <div style={{ display: showModal ? "block" : "none" }}>
+        <div>
+          <p>{recetteDetails.title}</p>
+          <p>{recetteDetails.servings}</p>
+          <p>{recetteDetails.ingredients}</p>
+          <p>{recetteDetails.instructions}</p>
+          <button onClick={onClose}>Close</button>
+        </div>
+      </div>
     
     )
 }
