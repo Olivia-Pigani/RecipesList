@@ -1,0 +1,30 @@
+.mainDisplay{
+    display:flex;
+    flex-direction:column;
+    margin-top: 15px;
+    font-weight: bolder;
+}
+.oneLineOfRecipe{
+    display:flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 15px;
+    background-color: rgb(252, 252, 252);
+
+    
+}
+body{
+    margin-left: 25px;
+    
+}
+
+.App{
+    display:flex;
+}
+
+.formStyle{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 6rem;
+}

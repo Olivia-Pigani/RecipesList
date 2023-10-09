@@ -1,6 +1,7 @@
 import ModalOfDetails from "./ModalOfDetails";
 import svg from "../assets/img/card-checklist.svg";
 import { useState } from "react";
+import styleFile from "../css/Style.module.css"
 
 const Display = (props) => {
   const { data, setRecettes } = props;
@@ -36,17 +37,23 @@ const Display = (props) => {
   return (
 <div>
       {showModal ? null : (
-        <div>
+        <div className={styleFile.mainDisplay}>
           {data.map((recette, index) => (
-            <div key={index}>
+            <div className={styleFile.oneLineOfRecipe} key={index}>
+              <div>
               {recette.title}
+              </div>
+              <div>
               <button
                 style={descriptionLogoStyle}
                 onClick={() => openModal(recette)}
               >
                 <img src={svg} alt="Details Button" />
               </button>
+              </div>
+              <div>
               <button onClick={() => deleteItemClick(recette.id)}>Delete</button>
+              </div>
             </div>
           ))}
         </div>

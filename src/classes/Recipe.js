@@ -1,51 +1,46 @@
 class Recipe {
-    constructor(title,ingredients,servings,instructions,id=Date.now()){
-        this._title=title,
-        this._ingredients=ingredients,
-        this._servings=servings,
-        this._instructions=instructions,
-        this._id=id
-    }
+  constructor(title, ingredients, servings, instructions, id = Date.now()) {
+    this._title = title
+      this._ingredients = ingredients
+      this._servings = servings
+      this._instructions = instructions
+      this._id = id
+  }
 
+  get title() {
+    return this._title;
+  }
 
+  set title(t) {
+    this._title = t;
+  }
 
-    get title() {
-        return this._title;
-    }
+  get ingredients() {
+    return this._ingredients;
+  }
 
-    set title(t) {
-        this._title = t;
-    }
+  set ingredients(ing) {
+    this._ingredients = ing;
+  }
 
-    get ingredients() {
-        return this._ingredients;
-    }
+  get servings() {
+    return this._servings;
+  }
 
-    set ingredients(ing) {
-        this._ingredients = ing;
-    }
+  set servings(s) {
+    this._servings = s;
+  }
 
-    get servings() {
-        return this._servings;
-    }
+  get instructions() {
+    return this._instructions;
+  }
 
-    set servings(s) {
-        this._servings = s;
-    }
+  set instructions(ins) {
+    this._instructions = ins;
+  }
 
-    get instructions() {
-        return this._instructions;
-    }
-
-    set instructions(ins) {
-        this._instructions = ins;
-    }
-
-    get id() {
-        return this._id;
-    }
-
-   
+  get id() {
+    return this._id;
+  }
 }
-export default Recipe
-    
+export default Recipe;

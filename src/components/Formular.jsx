@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Recipe from "../classes/Recipe";
+import StyleSheet from "../css/Style.module.css"
 
 const Formular = ({ dataFormToApp }) => {
   const [dataForm, setDataForm] = useState({
@@ -35,7 +36,7 @@ const Formular = ({ dataFormToApp }) => {
   };
 
   return (
-    <form action="#" onSubmit={submitRecipeForm}>
+    <form className={StyleSheet.formStyle} action="#" onSubmit={submitRecipeForm}>
       <label htmlFor="title">Recipe's title : </label>
       <input
         type="text"

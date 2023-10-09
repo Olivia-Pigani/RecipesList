@@ -3,6 +3,7 @@ import Api from "./api/Api";
 import Display from "./components/Display";
 import Recipe from "./classes/Recipe.js";
 import Formular from "./components/Formular";
+import StyleSheet from "./css/Style.module.css"
 
 function App() {
   const [recettes, setRecettes] = useState([]);
@@ -43,10 +44,10 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={StyleSheet.App}>
       <Api recipesToApp={handleRecipesToApp} />
-      <Formular dataFormToApp={handleDataFormToApp}/>
       <Display data={recettes} setRecettes={setRecettes} deleteItem={handleDeleteItem} />
+      <Formular dataFormToApp={handleDataFormToApp}/>
     </div>
   );
 }
