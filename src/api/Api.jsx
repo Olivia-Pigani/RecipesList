@@ -1,3 +1,5 @@
+/**Pas la peine de faire du jsx, on peut use du js !! */
+
 import { useState, useEffect } from "react";
 
 const Api = ({recipesToApp}) => {
